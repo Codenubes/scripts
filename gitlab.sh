@@ -1,6 +1,6 @@
 #!/bin/bash
  while [ true ]; do
-   if [ $(curl -sw '%{http_code}' "http://localhost/" -o /dev/null) -eq 200 ]; then
+   if [ $(curl -sw '%{http_code}' "http://localhost/-/health" -o /dev/null) -eq 200 ]; then
      echo "===========================if called================================";
 	 echo ================================================kodrex script execution starts================================================
 		gitlab-rails runner "token = User.find_by_username('root').personal_access_tokens.create(scopes: [:sudo, :read_user, :read_repository, :api, :read_api], name: 'Automation token'); token.set_token('myprivatetoken123'); token.save!"
