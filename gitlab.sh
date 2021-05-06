@@ -1,6 +1,5 @@
 #!/bin/bash
  while [ true ]; do
-	echo $(curl -sw '%{http_code}' "http://localhost" -o /dev/null)
 	if [ $(curl -sw '%{http_code}' "http://localhost" -o /dev/null) -eq 302 ]; then
 		echo "===========================if called================================";
 		echo "================================================kodrex script execution starts================================================"
