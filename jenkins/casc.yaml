@@ -1,0 +1,24 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: admin
+         password: admin123
+tool:
+  git:
+    installations:
+    - home: "/bin/git"
+      name: "Default"
+  maven:
+    installations:
+    - name: "Maven 3"
+      home: "/bin/maven3"
+      properties:
+      - installSource:
+          installers:
+            - maven:
+                id: "3.5.4"
+unclassified:
+  location:
+    url: http://loclhost:8080/
