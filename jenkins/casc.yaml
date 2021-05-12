@@ -22,3 +22,8 @@ tool:
 unclassified:
   location:
     url: http://loclhost:8080/
+jobs:
+  - script: >
+      job('Job_DSL_Seed') {
+      
+      }    
