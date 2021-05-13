@@ -22,8 +22,44 @@ tool:
 unclassified:
   location:
     url: http://loclhost:8080/
+  githubpluginconfig:
+    configs:
+      - name: "InHouse GitHub EE"
+        apiUrl: "http://loclhost:8080/"
+        #credentialsId: "[GitHubEEUser]"
+        manageHooks: true
+
 jobs:
   - script: >
-      job('Job_DSL_Seed') {
-      
+      pipeline {
+        agent any
+        tools {
+            maven 'maven'
+        }
+        stages {
+            stage('Checkout') {
+                steps {
+                    git url: 'https://github.com/piomin/sample-spring-boot-autoscaler.git', credentialsId: 'github-piomin', branch: 'master'
+                }
+            }
+            stage('Test') {
+                steps {
+                    dir('example-service') {
+                        sh 'mvn clean test'
+                    }
+                }
+            }
+            stage('Build') {
+                steps {
+                    dir('example-service') {
+                        sh 'mvn clean install'
+                    }
+                }
+            }
+        }
+        post {
+            always {
+                junit '**/target/reports/**/*.xml'
+            }
+        }
       }    
