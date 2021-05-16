@@ -31,7 +31,7 @@ unclassified:
 
 jobs:
   - script: >
-      pipeline {
+      pipelineJob("my test project") {
         agent any
         tools {
             maven 'maven'
