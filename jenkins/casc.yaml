@@ -25,7 +25,7 @@ unclassified:
   githubpluginconfig:
     configs:
       - name: "InHouse GitHub EE"
-        apiUrl: "http://loclhost:8080/"
+        apiUrl: "http://loclhost:80/"
         #credentialsId: "[GitHubEEUser]"
         manageHooks: true
 
