@@ -28,6 +28,10 @@ unclassified:
         apiUrl: "http://loclhost:80/"
         #credentialsId: "[GitHubEEUser]"
         manageHooks: true
+  gitscm:
+    globalConfigName: jenkins
+    globalConfigEmail: jenkins@domain.local
+    createAccountBasedOnEmail: true
 
 jobs:
   - script: >
