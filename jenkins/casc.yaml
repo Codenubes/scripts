@@ -8,7 +8,7 @@ jenkins:
 tool:
   git:
     installations:
-    - home: "/bin/git"
+    - home: "git"
       name: "Default"
   maven:
     installations:
@@ -42,3 +42,12 @@ jobs:
                 maven('-e clean test')
             }
         }
+  - script: >
+      multibranchPipelineJob('configuration-as-code') {
+          branchSources {
+              git {
+                  id = 'configuration-as-code'
+                  remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
+              }
+          }
+      }
