@@ -1,4 +1,4 @@
-job-dsl
+job-dsl: latest
 ant:latest
 antisamy-markup-formatter:latest
 build-timeout:latest
