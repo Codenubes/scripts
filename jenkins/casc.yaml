@@ -42,7 +42,9 @@ jobs:
                 scm('H/15 * * * *')
             }
             steps {
-                maven('-e clean test')
+                dir('example-service') {
+                    sh 'mvn clean install'
+                }
             }
         }
   - script: >
