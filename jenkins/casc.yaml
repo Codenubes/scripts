@@ -42,8 +42,7 @@ jobs:
                 scm('H/15 * * * *')
             }
             steps {
-                mavenInstallation('Maven 3.5.4')
-              maven('-e clean test')
+              maven(' clean test')
             }
             
         }
