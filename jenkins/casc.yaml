@@ -12,8 +12,7 @@ tool:
       name: "Default"
   maven:
     installations:
-    - name: "Maven 3"
-      home: "/bin/maven3"
+    - name: "maven"
       properties:
       - installSource:
           installers:
@@ -55,3 +54,36 @@ jobs:
               }
           }
       }
+  - script: >
+      pipeline {
+            agent any
+            tools {
+                maven 'maven'
+            }
+            stages {
+                stage('Checkout') {
+                    steps {
+                        git url: 'https://github.com/piomin/sample-spring-boot-autoscaler.git', credentialsId: 'github-piomin', branch: 'master'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        dir('example-service') {
+                            sh 'mvn clean test'
+                        }
+                    }
+                }
+                stage('Build') {
+                    steps {
+                        dir('example-service') {
+                            sh 'mvn clean install'
+                        }
+                    }
+                }
+            }
+            post {
+                always {
+                    junit '**/target/reports/**/*.xml'
+                }
+            }
+        }
