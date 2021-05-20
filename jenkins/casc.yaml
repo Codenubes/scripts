@@ -42,10 +42,9 @@ jobs:
                 scm('H/15 * * * *')
             }
             steps {
-                dir('example-service') {
-                    sh 'mvn clean install'
-                }
+              maven('-e clean test')
             }
+            
         }
   - script: >
       multibranchPipelineJob('configuration-as-code') {
