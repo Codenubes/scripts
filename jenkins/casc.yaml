@@ -5,6 +5,13 @@ jenkins:
       users:
        - id: admin
          password: admin123
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: MAVEN_HOME
+        value: /var/jenkins_home/apache-maven-3.8.1/
+      - key: M2_HOME
+        value: /var/jenkins_home/apache-maven-3.8.1/
 tool:
   git:
     installations:
