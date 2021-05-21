@@ -19,8 +19,8 @@ tool:
       name: "Default"
   maven:
     installations:
-    - name: "Default"
-      home: "/var/jenkins_home/apache-maven-3.8.1/"
+    - name: "kodrex_maven"
+      home: "/var/jenkins_home/apache-maven-3.5.4/"
       properties:
       - installSource:
           installers:
@@ -50,7 +50,10 @@ jobs:
                 scm('H/15 * * * *')
             }
             steps {
-              maven(' clean test')
+                maven {
+                    mavenInstallation('kodrex_maven')
+                    goals('clean install')                    
+                }
             }
             
         }
