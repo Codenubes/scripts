@@ -12,7 +12,8 @@ tool:
       name: "Default"
   maven:
     installations:
-    - name: "maven"
+    - name: "Default"
+      home: "/opt/maven3"
       properties:
       - installSource:
           installers:
