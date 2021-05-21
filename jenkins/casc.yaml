@@ -13,7 +13,7 @@ tool:
   maven:
     installations:
     - name: "Default"
-      home: "/opt/maven3"
+      home: "/var/jenkins_home/apache-maven-3.8.1/"
       properties:
       - installSource:
           installers:
