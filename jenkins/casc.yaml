@@ -29,6 +29,11 @@ tool:
 unclassified:
   location:
     url: http://loclhost:8080/
+  sonarglobalconfiguration:
+    buildWrapperEnabled: true
+    installations:
+      - name: "SonarQube 1"
+        serverUrl: "http://localhost:9000"
   githubpluginconfig:
     configs:
       - name: "InHouse GitHub EE"
