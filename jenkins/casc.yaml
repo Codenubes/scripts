@@ -32,8 +32,9 @@ unclassified:
   sonarglobalconfiguration:
     buildWrapperEnabled: true
     installations:
-      - name: "SonarQube 1"
+      - name: "kodrex_sonarqube"
         serverUrl: "http://localhost:9000"
+        serverAuthenticationToken: "c27637a6d7e97b6c85c102930b85d41043893c43"
   githubpluginconfig:
     configs:
       - name: "InHouse GitHub EE"
