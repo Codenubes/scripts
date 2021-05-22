@@ -55,6 +55,14 @@ jobs:
                     goals('clean install')                    
                 }
             }
+             publishers {
+                sonar {
+                    branch('feature-xy')
+                    overrideTriggers {
+                        skipIfEnvironmentVariable('SKIP_SONAR')
+                    }
+                }
+            }
             
         }
   - script: >

@@ -1,5 +1,6 @@
 job-dsl: latest
 ant:latest
+sonar:latest
 antisamy-markup-formatter:latest
 build-timeout:latest
 cloudbees-folder:latest
