@@ -57,7 +57,7 @@ jobs:
             }
              publishers {
                 sonar {
-                    branch('feature-xy')
+                    mavenInstallation('kodrex_maven')
                     overrideTriggers {
                         skipIfEnvironmentVariable('SKIP_SONAR')
                     }
