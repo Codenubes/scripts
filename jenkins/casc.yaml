@@ -72,6 +72,21 @@ jobs:
             
         }
   - script: >
+        job('maven-gatling-demo') {
+            scm {
+                git('git://github.com:gatling/gatling-maven-plugin-demo')
+            }
+            triggers {
+                scm('H/15 * * * *')
+            }
+            steps {
+                maven {
+                    mavenInstallation('kodrex_maven')
+                    goals('clean install gatling:test')                    
+                }
+            }         
+        }        
+  - script: >
       multibranchPipelineJob('configuration-as-code') {
           branchSources {
               git {

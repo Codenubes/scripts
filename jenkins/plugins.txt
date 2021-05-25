@@ -1,4 +1,5 @@
 job-dsl: latest
+gatling:latest
 ant:latest
 sonar:latest
 antisamy-markup-formatter:latest
