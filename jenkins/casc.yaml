@@ -74,7 +74,7 @@ jobs:
   - script: >
         job('maven-gatling-demo') {
             scm {
-                git('git://github.com:gatling/gatling-maven-plugin-demo')
+                git('https://github.com/gatling/gatling-maven-plugin-demo.git')
             }
             triggers {
                 scm('H/15 * * * *')
