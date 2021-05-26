@@ -1,5 +1,6 @@
 job-dsl: latest
 gatling:latest
+google-kubernetes-engine:latest
 ant:latest
 sonar:latest
 antisamy-markup-formatter:latest
