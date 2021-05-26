@@ -97,9 +97,11 @@ jobs:
             steps {
                 maven {
                     mavenInstallation('kodrex_maven')
-                    gatlingArchive()
                 }
             }         
+            publishers {
+                archiveGatling()
+            }
         }
   - script: >
       multibranchPipelineJob('configuration-as-code') {
