@@ -114,7 +114,7 @@ jobs:
           }
       }      
   - script: >      
-        pipelineJob('job-name') {
+        pipelineJob('my-pipeline') {
           definition {
             cps {
               script('''
